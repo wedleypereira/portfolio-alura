@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Cores Originais
+--cor-primaria: #000;
+--cor-secundaria: #F6F6F6;
+--cor-terciaria: #22D4FD;
+--cor-hover: #272727; 
+*/
+
+:root {
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+
+    --cor-primaria: #3C4048;
+    --cor-secundaria: #B2B2B2;
+    --cor-terciaria: #00ABB3;
+    --cor-hover: #EAEAEA;
+}
+
+body.light {
+    --cor-primaria: #967E76;
+    --cor-secundaria: #EEE3CB;
+    --cor-terciaria: #9BABB8;
+    --cor-hover: #D7C0AE;
+}
+
+body.dark {
+    --cor-primaria: #000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727; 
+}
+
+body {
+    /* o viewport height foi comentado, pelo fato do nosso body ter ultrapassado 100% de altura e começou a ter scroll na página
+    height: 100vh; */
+
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
+
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 50px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+}
+
+label {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    display: block;
+    background: #EBEBEB;
+    border-radius: 25px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: .3s;
+}
+
+label:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 2.5px;
+    left: 3.5px;
+    background: linear-gradient(180deg, #edd0aa, #cc9f5b);
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: .3s;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked + label {
+    background: #242424;
+}
+
+input:checked + label:after {
+    left: 56.5px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3A3A3A);
+}
+
+label:active:after {
+    width: 40px;
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-family: var(--fonte-primaria);
+    font-size: 2.25rem;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__descricao {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+
+.apresentacao__conteudo__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__conteudo__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-size: 1.5rem;
+}
+
+.apresentacao__conteudo__links__botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    width: 100%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 8px;
+
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    text-align: center;
+
+    padding: 21.5px 0;
+}
+
+.apresentacao__conteudo__links__botoes:hover {
+    background-color: var(--cor-hover);
+    padding: 3.5%;
+    transition: .2s;
+}
+
+.foto__perfil {
+    width: 50%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 16px;
+
+    align-self: flex-start;
+}
+
+.rodape {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    padding: 24px;
+    text-align: center;
+
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao__conteudo {
+        width: auto;
+    }
+    .foto__perfil {
+        align-self: center;
+    }
+}
